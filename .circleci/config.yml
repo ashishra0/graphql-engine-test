@@ -134,7 +134,7 @@ jobs:
   build_server:
     docker:
     - image: hasura/graphql-engine-server-builder:2020-01-14
-    resource_class: large
+    # resource_class: large
     working_directory: ~/graphql-engine
     steps:
     - attach_workspace:
@@ -263,7 +263,7 @@ jobs:
       <<: *test_pg_env
 
   server_unit_tests:
-    resource_class: large
+    # resource_class: large
     docker:
     - image: hasura/graphql-engine-server-builder:2020-01-14
     working_directory: ~/graphql-engine
