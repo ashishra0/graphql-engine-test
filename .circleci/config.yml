@@ -141,12 +141,12 @@ jobs:
         at: /build
     - *skip_job_on_ciignore
     - checkout
-    - restore_cache:
-        keys:
-        - cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-{{ checksum "server/cabal.project.freeze" }}
-        - cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-
-        - cabal-store-v1-{{ checksum "server/cabal.project" }}-
-        - cabal-store-v1-
+    # - restore_cache:
+    #     keys:
+    #     - cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-{{ checksum "server/cabal.project.freeze" }}
+    #     - cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-
+    #     - cabal-store-v1-{{ checksum "server/cabal.project" }}-
+    #     - cabal-store-v1-
     - run:
         name: Install latest postgresql client tools
         command: |
