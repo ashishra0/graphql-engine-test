@@ -164,11 +164,11 @@ jobs:
             echo "Non-release branch, build with coverage"
             make enable_coverage=true ci-build
           fi
-    - save_cache:
-        key: cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-{{ checksum "server/cabal.project.freeze" }}
-        paths:
-        - ~/.cabal/packages
-        - ~/.cabal/store
+    # - save_cache:
+    #     key: cabal-store-v1-{{ checksum "server/cabal.project" }}-{{ checksum "server/graphql-engine.cabal" }}-{{ checksum "server/cabal.project.freeze" }}
+    #     paths:
+    #     - ~/.cabal/packages
+    #     - ~/.cabal/store
     - store_artifacts:
         path: /build/_server_output
         destination: server
